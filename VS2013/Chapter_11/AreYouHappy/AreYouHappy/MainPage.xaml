@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="AreYouHappy.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AreYouHappy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button Click="Button_Click_1"  FontSize="36">Are you happy?</Button>
+            <TextBlock x:Name="response" FontSize="36"/>
+            <TextBlock x:Name="ticker"  FontSize="36"/>
+        </StackPanel>
+    </Grid>
+</Page>

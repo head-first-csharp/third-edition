@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="StarryNight.View.StarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard x:Key="fadeInStoryboard">
+            <DoubleAnimation From="0" To="1" Storyboard.TargetName="starPolygon"
+                       Storyboard.TargetProperty="Opacity" Duration="0:0:1.5" />
+        </Storyboard>
+        <Storyboard x:Key="fadeOutStoryboard">
+            <DoubleAnimation From="1" To="0" Storyboard.TargetName="starPolygon"
+                        Storyboard.TargetProperty="Opacity" Duration="0:0:1.5" />
+        </Storyboard>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <Polygon Points="0,75 75,0 100,100 0,25 150,25" Fill="Snow"
+                 Stroke="Black" x:Name="starPolygon"/>
+    </Grid>
+
+</UserControl>

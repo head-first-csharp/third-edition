@@ -1,0 +1,69 @@
+﻿<UserControl
+    x:Class="Stopwatch.View.BasicStopwatch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Stopwatch.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    xmlns:viewmodel="using:Stopwatch.ViewModel">
+
+    <UserControl.Resources>
+        <viewmodel:StopwatchViewModel x:Name="viewModel"/>
+        <viewmodel:TimeNumberFormatConverter x:Name="timeNumberFormatConverter"/>
+        <viewmodel:BooleanVisibilityConverter x:Key="visibilityConverter"/>
+        <viewmodel:BooleanNotConverter x:Key="notConverter"/>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        
+    </UserControl.Resources>
+
+    <Grid DataContext="{StaticResource ResourceKey=viewModel}">
+        <StackPanel>
+            <TextBlock>
+                <Run>Elapsed time: </Run>
+                <Run Text="{Binding Hours,
+                    Converter={StaticResource timeNumberFormatConverter}}"/>
+                <Run>:</Run>
+                <Run Text="{Binding Minutes,
+                    Converter={StaticResource timeNumberFormatConverter}, ConverterParameter=d2}"/>
+                <Run>:</Run>
+                <Run Text="{Binding Seconds,
+                    Converter={StaticResource timeNumberFormatConverter}}"/>
+            </TextBlock>
+            <TextBlock>
+                <Run>Lap time: </Run>
+                <Run Text="{Binding LapHours,
+                    Converter={StaticResource timeNumberFormatConverter}}"/>
+                <Run>:</Run>
+                <Run Text="{Binding LapMinutes,
+                    Converter={StaticResource timeNumberFormatConverter}, ConverterParameter=d2}"/>
+                <Run>:</Run>
+                <Run Text="{Binding LapSeconds,
+                    Converter={StaticResource timeNumberFormatConverter}}"/>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource StopwatchButtonStyle}"
+                    IsEnabled="{Binding Running, Converter={StaticResource notConverter}}"
+                    AutomationProperties.Name="Start"
+                    Click="StartButton_Click">&#xE102;</Button>
+                <Button Style="{StaticResource StopwatchButtonStyle}"
+                    AutomationProperties.Name="Stop"
+                    IsEnabled="{Binding Running}" Click="StopButton_Click">&#xE103;</Button>
+                <Button Style="{StaticResource StopwatchButtonStyle}"
+                    AutomationProperties.Name="Reset"
+                    Click="ResetButton_Click">&#xE10E;</Button>
+                <Button Style="{StaticResource StopwatchButtonStyle}" 
+                    AutomationProperties.Name="Lap"
+                    IsEnabled="{Binding Running}" Click="LapButton_Click">&#xE16D;</Button>
+            </StackPanel>
+            <TextBlock Text="Stopwatch is running"
+                   Visibility="{Binding Running, Converter={StaticResource visibilityConverter}}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

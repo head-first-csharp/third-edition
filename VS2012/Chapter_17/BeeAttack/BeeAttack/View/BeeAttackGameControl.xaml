@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="BeeAttack.View.BeeAttackGameControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480"
+             xmlns:view="clr-namespace:BeeAttack.View"
+             ManipulationDelta="UserControl_ManipulationDelta"
+             >
+
+    <Grid x:Name="LayoutRoot" Background="SkyBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="hive"
+            Source="/Assets/Hive (outside).png" 
+            HorizontalAlignment="Left"
+            Margin="{Binding HiveMargin}"/>
+
+        <ItemsControl Grid.Row="1" x:Name="playArea">
+            <ItemsControl ItemsSource="{Binding BeeControls}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ItemsControl>
+
+        <TextBlock Grid.Row="1" Foreground="Black" VerticalAlignment="Top">
+        <Run>Misses left: </Run>
+        <Run Text="{Binding MissesLeft}"/>
+        </TextBlock>
+
+        <TextBlock Grid.Row="1" Foreground="Black" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Text="{Binding Score}" 
+                Style="{StaticResource PanoramaItemHeaderTextStyle}"/>
+
+        <Image x:Name="flower" 
+            Source="/Assets/Flower.png" 
+            Grid.Row="2" 
+            HorizontalAlignment="Left"
+            Margin="{Binding FlowerMargin}"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" 
+                HorizontalAlignment="Center" Visibility="{Binding GameOver}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Foreground="Yellow" 
+                        Style="{StaticResource JumpListAlphabetSmallStyle}">Bee</TextBlock>
+                <view:BeeControl Width="75" Height="75"/>
+                <TextBlock Foreground="Black"  
+                        Style="{StaticResource JumpListAlphabetSmallStyle}">Attack</TextBlock>
+            </StackPanel>
+
+            <Button Click="Button_Click">Start a new game</Button>
+
+            <HyperlinkButton Content="Learn how to build this game" 
+                            NavigateUri="http://www.headfirstlabs.com/hfcsharp" 
+                            TargetName="_blank" />
+        </StackPanel>
+    </Grid>
+</UserControl>

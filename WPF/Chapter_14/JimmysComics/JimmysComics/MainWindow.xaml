@@ -1,0 +1,55 @@
+﻿<Window x:Class="JimmysComics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:JimmysComics"
+        Title="Jimmy's Comics" Height="350" Width="525">
+
+    <Window.Resources>
+        <local:ComicQueryManager x:Key="comicQueryManager"/>
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource ResourceKey=comicQueryManager}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <ListView SelectionMode="Single" ItemsSource="{Binding AvailableQueries}"
+                  SelectionChanged="ListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="55" Margin="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Width="55" Height="55">
+                            <Image Source="{Binding Image}" Stretch="UniformToFill"/>
+                        </Border>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10,0,0,0">
+                            <TextBlock Text="{Binding Title}" TextWrapping="NoWrap"/>
+                            <TextBlock Text="{Binding Subtitle}" TextWrapping="NoWrap"/>
+                            <TextBlock Text="{Binding Description}" TextWrapping="NoWrap"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView Grid.Column="1" SelectionMode="Single"
+                  ItemsSource="{Binding CurrentQueryResults}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Image}" Margin="0,0,20,0"
+                               Stretch="UniformToFill" Width="25" Height="25"
+                               VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Title}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>

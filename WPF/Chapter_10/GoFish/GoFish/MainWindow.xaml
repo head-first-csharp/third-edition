@@ -1,0 +1,55 @@
+﻿<Window x:Class="GoFish.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GoFish"
+        Title="Go Fish!" Height="500" Width="525" Background="Gray">
+
+    <Window.Resources>
+        <local:Game x:Key="game"/>
+    </Window.Resources>
+
+    <Grid Margin="10" DataContext="{StaticResource ResourceKey=game}">
+
+        <TextBlock Text="Your Name" />
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBox x:Name="playerName" FontSize="12" Width="150" 
+                    Text="{Binding PlayerName, Mode=TwoWay}"
+                    IsEnabled="{Binding GameNotStarted}" />
+            <Button x:Name="startButton" Margin="5,0" IsEnabled="{Binding GameNotStarted}"
+                Content="Start the game!" Click="startButton_Click"/>
+        </StackPanel>
+        <TextBlock Text="Game progress" Grid.Row="2" Margin="0,10,0,0"/>
+        <ScrollViewer Grid.Row="3" FontSize="12" Background="White" Foreground="Black" 
+                    Content="{Binding GameProgress}" />
+        <TextBlock Text="Books" Margin="0,10,0,0" Grid.Row="4"/>
+        <ScrollViewer FontSize="12" Background="White" Foreground="Black"
+                Grid.Row="5" Grid.RowSpan="2" 
+                    Content="{Binding Books}" />
+        <TextBlock Text="Your hand" Grid.Row="0" Grid.Column="2" />
+        <ListBox x:Name="cards" Background="White" FontSize="12"
+                Height="Auto" Margin="0,0,0,10" 
+                Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" 
+                ItemsSource="{Binding Hand}" IsEnabled="{Binding GameInProgress}"
+                MouseDoubleClick="cards_MouseDoubleClick" />
+        <Button x:Name="askForACard" Content="Ask for a card"
+        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+        Grid.Row="6" Grid.Column="2"
+        Click="askForACard_Click" IsEnabled="{Binding GameInProgress}" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="150" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+    </Grid>
+    
+</Window>
+    

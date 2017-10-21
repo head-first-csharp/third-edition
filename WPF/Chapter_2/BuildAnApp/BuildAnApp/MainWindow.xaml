@@ -1,0 +1,32 @@
+﻿<Window x:Class="BuildAnApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="button1" Content="Show a message" HorizontalAlignment="Center"
+                VerticalAlignment="Center"  Click="button1_Click"/>
+
+        <Button x:Name="button2" Content="If/Else" HorizontalAlignment="Center"
+                VerticalAlignment="Center" Grid.Column="1" Click="button2_Click"/>
+
+        <Button x:Name="button3" Content="Another conditional test" HorizontalAlignment="Center"
+                VerticalAlignment="Center" Grid.Row="1" Click="button3_Click"/>
+
+        <Button x:Name="button4" Content="A loop" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Click="button4_Click"/>
+
+        <TextBlock x:Name="myLabel" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

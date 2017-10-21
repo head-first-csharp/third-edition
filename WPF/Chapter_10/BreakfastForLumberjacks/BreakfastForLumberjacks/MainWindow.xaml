@@ -1,0 +1,58 @@
+﻿<Window x:Class="BreakfastForLumberjacks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Breakfast for Lumberjacks" 
+        Width="525" Height="400"
+        MinWidth="300" MinHeight="350"
+        ResizeMode="CanResizeWithGrip" >
+
+    <Grid Grid.Row="1" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Lumberjack name" Margin="0,0,0,5" />
+        <TextBox Grid.Row="1"/>
+
+        <TextBlock Grid.Row="2" Text="Breakfast line" Margin="0,10,0,5" />
+        <ListBox Grid.Row="3" VerticalAlignment="Stretch">
+            <ListBoxItem Content="1. Ed"/>
+            <ListBoxItem Content="2. Billy"/>
+            <ListBoxItem Content="3. Jones"/>
+            <ListBoxItem Content="4. Fred"/>
+            <ListBoxItem Content="5. Johansen"/>
+            <ListBoxItem Content="6. Bobby, Jr."/>
+        </ListBox>
+
+        <TextBlock Grid.Row="4" Text="Feed a lumberjack" Margin="0,10,0,5" />
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <TextBox Text="2" Margin="0,0,10,0" Width="30"/>
+            <ComboBox SelectedIndex="0" Margin="0,0,10,0">
+                <ComboBoxItem Content="Crispy"/>
+                <ComboBoxItem Content="Soggy"/>
+                <ComboBoxItem Content="Browned"/>
+                <ComboBoxItem Content="Banana"/>
+            </ComboBox>
+            <Button Content="Add flapjacks" />
+        </StackPanel>
+
+        <Border Grid.Row="6" BorderThickness="1" 
+                Margin="0,5,0,0" BorderBrush="Gray">
+            <ScrollViewer Content="Ed has 7 flapjacks"
+                      BorderThickness="2" BorderBrush="White" MinHeight="50"/>
+        </Border>
+
+        <StackPanel Grid.Row="7" Orientation="Horizontal" Margin="0,10,0,0">
+            <Button Content="Add Lumberjack" Margin="0,0,10,0" />
+            <Button Content="Next Lumberjack" />
+        </StackPanel>
+
+    </Grid>
+</Window>

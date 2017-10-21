@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Stopwatch.View.AnalogStopwatch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            d:DesignHeight="300"
+            d:DesignWidth="400"
+            xmlns:viewmodel="clr-namespace:Stopwatch.ViewModel">
+
+    <UserControl.Resources>
+        <viewmodel:StopwatchViewModel x:Key="viewModel"/>
+        <viewmodel:BooleanNotConverter x:Key="notConverter"/>
+        <viewmodel:AngleConverter x:Key="angleConverter"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="baseGrid" DataContext="{StaticResource ResourceKey=viewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+        <Ellipse Width="300" Height="300" Stroke="Black" StrokeThickness="2">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB03F3F"/>
+                    <GradientStop Color="#FFE4CECE" Offset="1"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Rectangle RenderTransformOrigin="0.5,0.5" Width="2" Height="150" Fill="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform Y="-60"/>
+                    <RotateTransform Angle="{Binding Seconds, 
+                    Converter={StaticResource ResourceKey=angleConverter},
+                    ConverterParameter=Seconds}"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle RenderTransformOrigin="0.5,0.5" Width="4" Height="100" Fill="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform Y="-50"/>
+                    <RotateTransform Angle="{Binding Minutes, 
+                    Converter={StaticResource ResourceKey=angleConverter},
+                    ConverterParameter=Minutes}"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle RenderTransformOrigin="0.5,0.5" Width="1" Height="150" Fill="Yellow">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform Y="-60"/>
+                    <RotateTransform Angle="{Binding LapSeconds, 
+                    Converter={StaticResource ResourceKey=angleConverter}, 
+                    ConverterParameter=Seconds}"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle RenderTransformOrigin="0.5,0.5" Width="2" Height="100" Fill="Yellow">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform Y="-50"/>
+                    <RotateTransform Angle="{Binding LapMinutes, 
+                    Converter={StaticResource ResourceKey=angleConverter},
+                    ConverterParameter=Minutes}"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Ellipse Width="10" Height="10" Fill="Black"/>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Button IsEnabled="{Binding Running, Converter={StaticResource notConverter}}"
+            Click="StartButton_Click" Margin="0,0,5,0">Start</Button>
+            <Button IsEnabled="{Binding Running}" Click="StopButton_Click"
+            Margin="0,0,5,0">Stop</Button>
+            <Button Click="ResetButton_Click" Margin="0,0,5,0">Reset</Button>
+            <Button IsEnabled="{Binding Running}" Click="LapButton_Click">Lap</Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

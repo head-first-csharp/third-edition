@@ -1,0 +1,23 @@
+﻿<Window x:Class="AnimatedBee.View.FlyingBees"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:AnimatedBee.View"
+        xmlns:viewmodel="clr-namespace:AnimatedBee.ViewModel"
+        Title="Flying Bees" Height="600" Width="600">
+    
+    <Window.Resources>
+        <viewmodel:BeeViewModel x:Key="viewModel"/>
+    </Window.Resources>
+    
+    <Grid>
+        <ItemsControl
+                 DataContext="{StaticResource viewModel}"
+                 ItemsSource="{Binding Path=Sprites}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Background="SkyBlue" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</Window>

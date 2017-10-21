@@ -1,0 +1,28 @@
+﻿<Window x:Class="SloppyJoeChapter10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SloppyJoeChapter10"
+        Title="Welcome to Sloppy Joe's" Height="350" Width="525">
+
+    <Window.Resources>
+        <local:MenuMaker x:Key="menuMaker"/>
+    </Window.Resources>
+
+    <StackPanel Margin="5"
+          DataContext="{StaticResource ResourceKey=menuMaker}">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <StackPanel Margin="0,0,10,0">
+                <TextBlock Text="Number of items" Margin="0,0,0,5" />
+                <TextBox Width="100" HorizontalAlignment="Left" 
+                Text="{Binding NumberOfItems, Mode=TwoWay}" />
+            </StackPanel>
+            <Button x:Name="newMenu" VerticalAlignment="Bottom" 
+                Click="newMenu_Click" Content="Make a new menu"/>
+        </StackPanel>
+        <ListView ItemsSource="{Binding Menu}" Margin="0,0,20,0" />
+        <TextBlock>
+        <Run Text="This menu was generated on " />
+        <Run Text="{Binding GeneratedDate}"/>
+        </TextBlock>
+    </StackPanel>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="StarryNight.View.BeesOnAStarryNight"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewmodel="clr-namespace:StarryNight.ViewModel"
+        Title="Bees on a Starry Night" Height="600" Width="1200">
+
+    <Window.Resources>
+        <viewmodel:BeeStarViewModel x:Key="viewModel"/>
+    </Window.Resources>
+
+    <Grid>
+        <ItemsControl
+         DataContext="{StaticResource viewModel}"
+         ItemsSource="{Binding Path=Sprites}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Background="Blue" SizeChanged="SizeChangedHandler" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</Window>

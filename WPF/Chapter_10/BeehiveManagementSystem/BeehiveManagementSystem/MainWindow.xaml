@@ -1,0 +1,48 @@
+﻿<Window x:Class="BeehiveManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Beehive Management System" 
+        Height="300" Width="525"
+        ResizeMode="NoResize">
+
+    <StackPanel Margin="5">
+        <TextBlock Text="Worker Bee Assignments" Margin="0,0,0,5" />
+        <Border BorderThickness="1" BorderBrush="Black">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel Margin="0,0,10,0">
+                    <TextBlock Text="Job"/>
+                    <ComboBox SelectedIndex="0" >
+                        <ComboBoxItem Content="Baby bee tutoring"/>
+                        <ComboBoxItem Content="Egg care"/>
+                        <ComboBoxItem Content="Hive maintenance"/>
+                        <ComboBoxItem Content="Honey manufacturing"/>
+                        <ComboBoxItem Content="Nectar collector"/>
+                        <ComboBoxItem Content="Sting patrol"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Shifts" />
+                    <TextBox/>
+                </StackPanel>
+                <Button Content="Assign this job to a bee" VerticalAlignment="Bottom" Margin="10,0,0,0" />
+            </StackPanel>
+        </Border>
+
+        <Button Content="Work the next shift" Margin="0,20,20,0" 
+                FontSize="18"
+                HorizontalAlignment="Right" />
+
+        <TextBlock Text="Shift report" Margin="0,10,0,5"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="100">
+            <ScrollViewer 
+                  Content="
+Report for shift #20&#13;
+Worker #1 will be done with 'Nectar collector' after this shift&#13;
+Worker #2 finished the job&#13;
+Worker #2 is not working&#13;
+Worker #3 is doing 'Sting patrol' for 3 more shifts&#13;
+Worker #4 is doing 'Baby bee tutoring' for 6 more shifts
+                          "/>
+        </Border>
+    </StackPanel>
+</Window>
