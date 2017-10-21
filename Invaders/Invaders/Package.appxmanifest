@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="57933OReillyMedia.Invaders-LearntobuildappswithC" Publisher="CN=F09F37A0-0545-4E85-8895-007D5E43E22C" Version="1.0.0.3" />
+  <Properties>
+    <DisplayName>Head First C# Presents: Invaders</DisplayName>
+    <PublisherDisplayName>O'Reilly Media</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Invaders.App">
+      <VisualElements DisplayName="Head First C# Presents: Invaders" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Invaders is a tribute to one of the most popular, revered, and replicated icons in video game history... and you can learn to build it! This is the final project in the bestselling book for learning to program in C#, &quot;Head First C#&quot; from O'Reilly Media. Learn more at headfirstlabs.com." ForegroundText="light" BackgroundColor="#3D2686">
+        <DefaultTile ShowName="allLogos" ShortName="Invaders" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#FFFFFF" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>
