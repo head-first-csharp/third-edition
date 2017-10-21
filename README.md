@@ -15,3 +15,4 @@ This repository also contains the following PDFs:
 * [GDI+ Graphics bonus PDF download](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_GDI_download.pdf) – this was a chapter from the 2nd edition that showed you how to use GDI+, the legacy WinForms API for graphics
 * [Head First C# 3rd Edition Book Promo PDF](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_book_promo.pdf) – this PDF contains the first three chapters of the book, so you can try it out and see if it's for you
 
+![Head First C#, 3rd Edition – cover](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp-3e-cover.png)
