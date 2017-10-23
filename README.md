@@ -1,4 +1,6 @@
-_Looking for the [WPF Learner’s Guide to Head First C#](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_WPF_download.pdf)?_
+*****
+**_Looking for the [WPF Learner’s Guide to Head First C#](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_WPF_download.pdf)?_**
+*****
 
 # Head First C#, 3rd Edition (2013)
 This project contains source code, graphics, and downloadable PDFs for the projects in the 3rd edition of *Head First C#* (2013)
