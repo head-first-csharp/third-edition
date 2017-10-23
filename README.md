@@ -1,5 +1,5 @@
 *****
-**_Looking for the [WPF Learner’s Guide to Head First C# (PDF)](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_WPF_download.pdf)? You can use this PDF to use different versions of Windows or Visual Studio with the 3rd edition of Head First C#._**
+**_Looking for the [WPF Learner’s Guide to Head First C# (PDF)](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_WPF_download.pdf)? You can use [this PDF](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_WPF_download.pdf) to use different versions of Windows or Visual Studio with the 3rd edition of Head First C#._**
 *****
 
 # Head First C#, 3rd Edition (2013)
