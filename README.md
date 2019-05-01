@@ -20,3 +20,11 @@ This repository also contains the following PDFs:
 * [Head First C# 3rd Edition Book Promo PDF](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_book_promo.pdf) – this PDF contains the first three chapters of the book, so you can try it out and see if it's for you
 
 ![Head First C#, 3rd Edition – cover](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp-3e-cover.png)
+
+## License and Copyright
+
+All of the source code and graphics used by the source code is licensed under the [MIT License](https://github.com/head-first-csharp/third-edition/blob/master/LICENSE).
+
+PDFs, cover, and other written book material is © 2019 Andrew Stellman and Jennifer Greene, all rights reserved.
+
+The O’Reilly logo is a registered trademark of O’Reilly Media, Inc. The Head First series designations, Head First C#, and related trade dress are trademarks of O’Reilly Media, Inc.
