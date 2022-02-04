@@ -17,6 +17,7 @@ Here's what you'll find in this repository:
 This repository also contains the following PDFs:
 * [WPF Learner’s Guide to Head First C#](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_WPF_download.pdf) - when we wrote the 3rd edition in 2013, we were using Windows 8.1 and Visual Studio 2013. The WPF Guide gives you everything you need to work with other versions of Visual Studio and Windows.
 * [GDI+ Graphics bonus PDF download](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_GDI_download.pdf) – this was a chapter from the 2nd edition that showed you how to use GDI+, the legacy WinForms API for graphics
+* [The "Bee Attack" Window Phone game download](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_Windows_Phone_download.pdf) – the initial printing of the 3rd edition of Head First C# had a bonus Windows Phone game project! RIP Windows Phone 💔
 * [Head First C# 3rd Edition Book Promo PDF](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp3e_book_promo.pdf) – this PDF contains the first three chapters of the book, so you can try it out and see if it's for you
 
 ![Head First C#, 3rd Edition – cover](https://github.com/head-first-csharp/third-edition/raw/master/hfcsharp-3e-cover.png)
